@@ -9,7 +9,8 @@ my.vector <- c(my.num, initials)
 vector.sum <- sum(my.vector)
 
 # Describe why this doesn't work: 
-# 
+# Initials is a string whereas my.num is a number. For vectors, the variable types 
+# have to be the same. It cannot sum a string and number.  
 
 install.packages("stringr")
 
@@ -29,12 +30,21 @@ said.the.famous <- paste(my.line, " - ", initial)
 ## Part 2 - Vector and function practice
 
 # Make a vector and use typeof to check what type R considers it to be
+vector <- c(4, 7, 10, 5)
+typeof(vector)
 
 # Write a function `CompareLength` that takes in 2 vectors, and returns the sentence:
 # "The difference in lengths is N"
 
+CompareLength <- function(v1, v2)
+  sentence <- ("The difference in length is ")
+  v3 <- v1 - v2
+  ret.statement <- paste(sentence, v3)
+  return(ret.statement)
 
 # Pass two vectors of different length to your `CompareLength` function
+
+
 
 
 # Write a function `DescribeDifference` that will return one of the following statements:
